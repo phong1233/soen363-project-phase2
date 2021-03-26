@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+
+  postgres:
+    image: postgres
+    volumes:
+      - ./extracted/:/data/
+      - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./postgres/db:/var/lib/postgresql/data
+    ports:
+      - 5555:5432
+    environment:
+      - POSTGRES_DB=phase2
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres

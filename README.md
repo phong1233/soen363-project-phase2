@@ -11,5 +11,30 @@
 ## RDMS
 * Postgres
 
+### Getting started
+* Install [docker](https://www.docker.com/)
+* Extract the dataset in a root folder named **extracted**
+* Run this command to start
+    ```
+    docker-compose up
+    ```
+* Connect to:
+    ```
+    port = 5555
+    db name = phase2
+    user = postgres
+    password = postgres
+    ```
+* To stop:
+    ```
+    docker-compose stop
+    OR
+    ctrl-c
+    ```
+* To re-run the init.sql stop the container and remove the db volume:
+    ```
+    sudo rm -rf ./postgres/db
+    ```
+
 ## No SQL
 * MongoDB
