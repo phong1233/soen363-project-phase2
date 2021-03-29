@@ -2,7 +2,7 @@
 SELECT country, dt, average_temp as max_average_temp
 FROM GlobalLandTemperaturesByCountry
 WHERE average_temp IS NOT NULL
-  and dt BETWEEN '1800-01-01' and '1900-01-01' 
+  and dt BETWEEN '1800-01-01' and '1900-01-01'
   and average_temp = (
     SELECT MAX(average_temp)
     FROM globallandtemperaturesbycountry

@@ -1,4 +1,4 @@
--- Find the country with the maximum average temperature
+-- Find the country with the maximum average temperature at any time
 SELECT country, dt, average_temp as max_average_temp
 FROM GlobalLandTemperaturesByCountry
 WHERE average_temp IS NOT NULL

@@ -1,13 +1,13 @@
--- Find the top 10 country with the highest temperature ever
-SELECT country, MAX(average_temp) as max_average_temp
+-- Find the top 10 country with the highest temperature ever at any time
+SELECT country, MAX(average_temp) as max_temp
 FROM globallandtemperaturesbycountry
 WHERE average_temp IS NOT NULL
 GROUP BY (country)
-ORDER BY max_average_temp DESC
+ORDER BY max_temp DESC
 LIMIT 10;
 
 -- Result:
--- | country              | max_average_temp |
+-- | country              | max_temp         |
 -- | -------------------- | ---------------- |
 -- | Kuwait               | 38.842           |
 -- | United Arab Emirates | 37.75            |

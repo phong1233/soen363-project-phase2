@@ -1,4 +1,4 @@
--- Find the city with the maximum average temperature
+-- Find the city with the maximum average temperature at any time
 SELECT city, dt, average_temp as max_average_temp
 FROM globallandtemperaturesbycity
 WHERE average_temp IS NOT NULL
