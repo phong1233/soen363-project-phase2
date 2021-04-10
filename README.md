@@ -16,7 +16,7 @@
 * Extract the dataset in a root folder named **extracted**
 * Run this command to start
     ```
-    docker-compose up
+    docker-compose up postgres
     ```
 * Connect to:
     ```
@@ -38,3 +38,32 @@
 
 ## No SQL
 * MongoDB
+
+### Getting started
+* Install [Mongo Compass](https://www.mongodb.com/products/compass)
+* Install [docker](https://www.docker.com/)
+* Run this command to start
+    ```
+    docker-compose up mongo
+    ```
+* Connect to:
+    ```
+    port = 27017
+    user = mongo
+    password = mongo
+    ```
+* To stop:
+    ```
+    docker-compose stop
+    OR
+    ctrl-c
+    ```
+* To delete database:
+    ```
+    sudo rm -rf ./mongo/db
+    ```
+* On mongo compass import the files:
+    * listings.csv
+    * reviews.csv
+    * calendar.csv
+* Don't forget to change the type of each columns

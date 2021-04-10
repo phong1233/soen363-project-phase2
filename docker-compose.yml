@@ -14,3 +14,16 @@ services:
       - POSTGRES_DB=phase2
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+
+  mongo:
+    image: mongo
+    volumes:
+      - ./extracted_mongo/:/data/
+      - ./mongo/db:/data/db
+      - ./mongo/setup.js:/docker-entrypoint-initdb.d/setup.js:ro
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_DATABASE: 1
+      MONGO_INITDB_ROOT_USERNAME: mongo
+      MONGO_INITDB_ROOT_PASSWORD: mongo
