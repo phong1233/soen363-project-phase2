@@ -1,3 +1,6 @@
 .idea/
 extracted/
 postgres/db/
+mongo/db/
+extracted_mongo/
+.DS_Store
