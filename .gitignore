@@ -4,3 +4,4 @@ postgres/db/
 mongo/db/
 extracted_mongo/
 .DS_Store
+node_modules/
