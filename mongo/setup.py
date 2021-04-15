@@ -61,6 +61,12 @@ def loadFile(name, filename):
   print(f'Loaded {name} successfully!')
 
 
-loadFile('listings', '../dataset/listings.csv')
-#loadFile('reviews', '../dataset/reviews.csv')
-#loadFile('calendar', '../dataset/calendar.csv')
+loadFile('listings', '../extracted_mongo/listings-montreal.csv')
+loadFile('listings', '../extracted_mongo/listings-toronto.csv')
+loadFile('listings', '../extracted_mongo/listings-quebec.csv')
+
+loadFile('reviews', '../extracted_mongo/reviews-montreal.csv')
+loadFile('reviews', '../extracted_mongo/reviews-toronto.csv')
+loadFile('reviews', '../extracted_mongo/reviews-quebec.csv')
+#loadFile('reviews', '../extracted_mongo/reviews.csv')
+#loadFile('calendar', '../extracted_mongo/calendar.csv')

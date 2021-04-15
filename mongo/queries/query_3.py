@@ -6,7 +6,9 @@ db = client["soen363"]
 listings = db["listings"]
 
 import pprint
-pprint.pprint(listings.find_one(
+import datetime
+a = datetime.datetime.now()
+res = res = listings.find_one(
   {},
   {
     'price': 1,
@@ -14,7 +16,12 @@ pprint.pprint(listings.find_one(
     'description': 1,
     'listing_url': 1
   },
-  sort=[("price", -1)]))
+  sort=[("price", -1)])
+b = datetime.datetime.now()
+
+c = b - a
+pprint.pprint(res)
+pprint.pprint(str(c.microseconds * 0.001) + ' ms')
 
 # Results:
 # {'_id': ObjectId('6075f1fa2180f1fa7aa9f4b5'),

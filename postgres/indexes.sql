@@ -7,23 +7,23 @@ CREATE INDEX dt_index ON globallandtemperaturesbycity (dt);
 
 -- Global land temperature by country indexes
 
-CREATE INDEX country_index ON globallandtemperaturesbycountry (country);
-CREATE INDEX average_temp_index ON globallandtemperaturesbycountry (average_temp);
-CREATE INDEX dt_index ON globallandtemperaturesbycountry (dt);
+CREATE INDEX country_index_t2 ON globallandtemperaturesbycountry (country);
+CREATE INDEX average_temp_index_t2 ON globallandtemperaturesbycountry (average_temp);
+CREATE INDEX dt_index_t2 ON globallandtemperaturesbycountry (dt);
 
 -- Global land temperature by major city indexes
 
-CREATE INDEX city_index ON globallandtemperaturesbymajorcity (city);
-CREATE INDEX country_index ON globallandtemperaturesbymajorcity (country);
-CREATE INDEX average_temp_index ON globallandtemperaturesbymajorcity (average_temp);
-CREATE INDEX dt_index ON globallandtemperaturesbymajorcity (dt);
+CREATE INDEX city_index_t3 ON globallandtemperaturesbymajorcity (city);
+CREATE INDEX country_index_t3 ON globallandtemperaturesbymajorcity (country);
+CREATE INDEX average_temp_index_t3 ON globallandtemperaturesbymajorcity (average_temp);
+CREATE INDEX dt_index_t3 ON globallandtemperaturesbymajorcity (dt);
 
 -- Global land temperature by state indexes
-CREATE INDEX state_index ON globallandtemperaturesbystate (the_state);
-CREATE INDEX country_index ON globallandtemperaturesbystate (country);
-CREATE INDEX average_temp_index ON globallandtemperaturesbystate (average_temp);
-CREATE INDEX dt_index ON globallandtemperaturesbystate (dt);
+CREATE INDEX state_index_t4 ON globallandtemperaturesbystate (the_state);
+CREATE INDEX country_index_t4 ON globallandtemperaturesbystate (country);
+CREATE INDEX average_temp_index_t4 ON globallandtemperaturesbystate (average_temp);
+CREATE INDEX dt_index_t4 ON globallandtemperaturesbystate (dt);
 
 -- Global temperature indexes
 
-CREATE INDEX dt_index ON globaltemperatures (dt);
+CREATE INDEX dt_index_t5 ON globaltemperatures (dt);

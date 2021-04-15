@@ -11,7 +11,15 @@ pipeline = [
 ]
 
 import pprint
-pprint.pprint(list(listings.aggregate(pipeline)))
+import datetime
+
+a = datetime.datetime.now()
+res = list(listings.aggregate(pipeline))
+b = datetime.datetime.now()
+
+c = b - a
+pprint.pprint(res)
+pprint.pprint(str(c.microseconds * 0.001) + ' ms')
 
 # Results:
 # [{'_id': "L'Île-Bizard-Sainte-Geneviève", 'avg_price': 192.73684210526315},
