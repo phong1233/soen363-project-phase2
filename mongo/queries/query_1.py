@@ -1,4 +1,4 @@
-# Order all neighborhoods by number of listings
+# Find the number of listings for each neighborhood
 import pymongo
 
 client = pymongo.MongoClient("mongodb://localhost:27017/")

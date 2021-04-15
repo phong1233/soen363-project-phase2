@@ -8,13 +8,18 @@ client = pymongo.MongoClient("mongodb://localhost:27017/")
 db = client["soen363"]
 
 def sanitizeRow(row):
-  number_regex = "^\d+(\.\d*)?$"
+  int_regex = "^-?\d+$"
+  float_regex = "^\d+(\.\d*)?$"
   price_regex = "^\$\d+(\.\d*)?$"
   percent_regex = "^\d+\%?$"
   date_regex = "^\d{4}-\d{2}-\d{2}$"
   for col in row:
     # Number
-    if re.match(number_regex, row[col]) is not None:
+    if re.match(int_regex, row[col]) is not None:
+      row[col] = int(row[col])
+      continue
+
+    if re.match(float_regex, row[col]) is not None:
       row[col] = float(row[col])
       continue
 
@@ -57,5 +62,5 @@ def loadFile(name, filename):
 
 
 loadFile('listings', '../dataset/listings.csv')
-loadFile('reviews', '../dataset/reviews.csv')
-loadFile('calendar', '../dataset/calendar.csv')
+#loadFile('reviews', '../dataset/reviews.csv')
+#loadFile('calendar', '../dataset/calendar.csv')
