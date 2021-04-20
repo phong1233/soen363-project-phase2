@@ -23,8 +23,8 @@ pprint.pprint(res)
 pprint.pprint(str(c.microseconds * 0.001) + ' ms')
 
 # Results:
-# {'_id': 'Hotel room', 'listings': 207},
-# {'_id': 'Shared room', 'listings': 491},
-# {'_id': 'Private room', 'listings': 13580},
-# {'_id': 'Entire home/apt', 'listings': 32110}]
-# '155.715 ms'
+# [{'_id': 'Hotel room', 'listings': 146},
+#  {'_id': 'Shared room', 'listings': 378},
+#  {'_id': 'Private room', 'listings': 9757},
+#  {'_id': 'Entire home/apt', 'listings': 21987}]
+# '126.997 ms'

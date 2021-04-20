@@ -2,6 +2,7 @@ import pymongo
 import datetime
 import re
 import csv
+import pprint
 
 client = pymongo.MongoClient("mongodb://localhost:27017/")
 
@@ -60,7 +61,7 @@ def loadFile(name, filename):
       col.insert_one(row)
   print(f'Loaded {name} successfully!')
 
-
+a = datetime.datetime.now()
 loadFile('listings', '../extracted_mongo/listings-montreal.csv')
 loadFile('listings', '../extracted_mongo/listings-toronto.csv')
 loadFile('listings', '../extracted_mongo/listings-quebec.csv')
@@ -68,5 +69,9 @@ loadFile('listings', '../extracted_mongo/listings-quebec.csv')
 loadFile('reviews', '../extracted_mongo/reviews-montreal.csv')
 loadFile('reviews', '../extracted_mongo/reviews-toronto.csv')
 loadFile('reviews', '../extracted_mongo/reviews-quebec.csv')
+b = datetime.datetime.now()
+c = b - a
+pprint.pprint(str(c.microseconds * 0.001) + ' ms')
+
 #loadFile('reviews', '../extracted_mongo/reviews.csv')
 #loadFile('calendar', '../extracted_mongo/calendar.csv')

@@ -1,6 +1,5 @@
 # Find the most expensive listing that is booked all year
 
-
 import pymongo
 import pprint
 import datetime
@@ -11,17 +10,16 @@ listings = db["listings"]
 
 fullyBooked = {"availability_365": 0.0}
 
-res = listings.find_one(fullyBooked,  {
+a = datetime.datetime.now()
+res = listings.find_one(fullyBooked, {
     'name': 1,
     'description': 1,
     'neighbourhood_cleansed': 1,
     'host_location': 1,
     'availability_365':1,
     'price':1
+
 }, sort=[("price", -1)])
-
-
-a = datetime.datetime.now()
 b = datetime.datetime.now()
 
 c = b - a
@@ -29,8 +27,7 @@ pprint.pprint(res)
 pprint.pprint(str(c.microseconds * 0.001) + ' ms')
 
 #Results
-
-# {'_id': ObjectId('6078cabcd891aa9d948701f6'),
+# {'_id': ObjectId('607f137bb5928748da83f819'),
 #  'availability_365': 0,
 #  'description': 'This luxurious Penthouse boasts rich fabrics and textures, '
 #                 'leather, wood and steel along with original stone and '
@@ -41,5 +38,4 @@ pprint.pprint(str(c.microseconds * 0.001) + ' ms')
 #  'name': 'Hotel Epik Montreal, Penthouse',
 #  'neighbourhood_cleansed': 'Ville-Marie',
 #  'price': '$7,000.00'}
-# '0.0 ms'
-
+# '82.0 ms'

@@ -9,6 +9,8 @@ db = client["soen363"]
 listings = db["listings"]
 
 
+a = datetime.datetime.now()
+
 res = listings.find_one(
     {},
     {
@@ -20,7 +22,6 @@ res = listings.find_one(
     },
     sort=[("number_of_reviews", -1)])
 
-a = datetime.datetime.now()
 b = datetime.datetime.now()
 
 c = b - a
@@ -28,7 +29,7 @@ pprint.pprint(res)
 pprint.pprint(str(c.microseconds * 0.001) + ' ms')
 
 # Result
-# {'_id': ObjectId('6078cac0d891aa9d94870d70'),
+# {'_id': ObjectId('607f137eb5928748da840393'),
 #  'description': 'Flexible check in/out, staying with me in top floor (24 '
 #                 'stairs up) 40 year old sunny townhouse complex: 650 square '
 #                 'feet electric heating. 8 mins from downtown by 24 hour '
@@ -51,4 +52,4 @@ pprint.pprint(str(c.microseconds * 0.001) + ' ms')
 #  'name': 'SUNNY DBL CORKTOWN BREAKFAST EAST DOWNTOWN',
 #  'neighbourhood_cleansed': 'Regent Park',
 #  'number_of_reviews': 828}
-# '0.0 ms'
+# '72.996 ms'
