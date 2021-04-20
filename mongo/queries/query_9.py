@@ -11,6 +11,8 @@ listings = db["listings"]
 
 fullyBooked = {"availability_365": 0.0}
 
+a = datetime.datetime.now()
+
 res = listings.find_one(fullyBooked,  {
     'name': 1,
     'description': 1,
@@ -21,7 +23,6 @@ res = listings.find_one(fullyBooked,  {
 }, sort=[("price", -1)])
 
 
-a = datetime.datetime.now()
 b = datetime.datetime.now()
 
 c = b - a

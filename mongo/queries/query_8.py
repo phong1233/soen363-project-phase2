@@ -8,6 +8,7 @@ client = pymongo.MongoClient("mongodb://localhost:27017/")
 db = client["soen363"]
 listings = db["listings"]
 
+a = datetime.datetime.now()
 
 res = listings.find_one(
     {},
@@ -20,7 +21,6 @@ res = listings.find_one(
     },
     sort=[("number_of_reviews", -1)])
 
-a = datetime.datetime.now()
 b = datetime.datetime.now()
 
 c = b - a
