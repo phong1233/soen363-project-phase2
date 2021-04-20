@@ -8,6 +8,7 @@ client = pymongo.MongoClient("mongodb://localhost:27017/")
 db = client["soen363"]
 listings = db["listings"]
 
+a = datetime.datetime.now()
 
 a = datetime.datetime.now()
 
